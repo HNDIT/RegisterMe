@@ -22,14 +22,14 @@ class Welcome extends CI_Controller {
     function __construct() {
         parent::__construct();
 
-        $this->load->model('Generic_model', '', TRUE);
+
 
 
     }
 	public function index()
 	{
-        $data['test']=$this->Generic_model->getData('member','','',0,0);
-		$this->load->view('welcome_message',$data);
+
+		$this->load->view('welcome_message');
 	}
 
     public function home(){

@@ -16,7 +16,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>CODL Finance 2015</title>
+    <title>RegisterMe</title>
 
     <!-- Bootstrap core CSS -->
     <?php
@@ -32,117 +32,11 @@
     <div class="row">
         <?php $this->load->view('sidemenu'); ?>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-            <h1 class="page-header">Dashboard</h1>
-
-            <div class="row placeholders">
-                <div class="col-xs-6 col-sm-3 placeholder">
-                    <div style="border-radius: 50%;background-color: #2b669a;width: 200px;height: 200px;">
-                        <h3 style="padding-top: 50%;">
-                            <?php echo 'Rs.'.$totalCreditPayment[0]->TotalCreditPay*(-1); ?>
-                        </h3>
-                    </div>
-
-                    <h4>Label</h4>
-                    <span class="text-muted">Total Credit Payment:Rs.<?php echo $totalCreditPayment[0]->TotalCreditPay*(-1); ?></span>
-                </div>
-                <div class="col-xs-6 col-sm-3 placeholder">
-                    <div style="border-radius: 50%;background-color: #009900;width: 200px;height: 200px;">
-                        <h3 style="padding-top: 50%;">
-                            <?php echo 'Rs.'.$totalSharesPayment[0]->TotalSharesPay; ?>
-                        </h3>
-                    </div>
-
-                    <h4>Label</h4>
-                    <span class="text-muted">Total Credit Payment:Rs.<?php echo $totalSharesPayment[0]->TotalSharesPay; ?></span>
-                </div>
-                <div class="col-xs-6 col-sm-3 placeholder">
-                    <div style="border-radius: 50%;background-color: #d9534f;width: 200px;height: 200px;">
-                        <h3 style="padding-top: 50%;">
-                            <?php echo 'Rs.'.$totalReservation[0]->TotalReserveAmount; ?>
-                        </h3>
-                    </div>
-
-                    <h4>Label</h4>
-                    <span class="text-muted">Total Credit Payment:Rs.<?php echo $totalReservation[0]->TotalReserveAmount; ?></span>
-                </div>
-                <div class="col-xs-6 col-sm-3 placeholder">
-                    <div style="border-radius: 50%;background-color: #888888;width: 200px;height: 200px;">
-                        <h3 style="padding-top: 50%;">
-                            <?php echo 'Rs.'.$totalCreditPayment[0]->TotalCreditPay; ?>
-                        </h3>
-                    </div>
-
-                    <h4>Label</h4>
-                    <span class="text-muted">Total Credit Payment:Rs.<?php echo $totalReservation[0]->TotalReserveAmount; ?></span>
-                </div>
-
-            </div>
-
-            <div class="row placeholders">
-                <div class="col-xs-4 col-sm-2 placeholder">
-                    <div style="margin-left: 25%;border-radius: 50%;background-color: #2b669a;width: 100px;height: 100px;">
-                        <h5 style="padding-top: 50%;">
-                            <?php echo 'Rs.'.$totalCreditPayment[0]->TotalCreditPay*(-1); ?>
-                        </h5>
-                    </div>
-
-                    <h4>Label</h4>
-                    <span class="text-muted">Total Credit Payment:Rs.<?php echo $totalCreditPayment[0]->TotalCreditPay*(-1); ?></span>
-                </div>
-                <div class="col-xs-4 col-sm-2 placeholder">
-                    <div style="margin-left: 25%;border-radius: 50%;background-color: #009900;width: 100px;height: 100px;">
-                        <h5 style="padding-top: 50%;">
-                            <?php echo 'Rs.'.$totalSharesPayment[0]->TotalSharesPay; ?>
-                        </h5>
-                    </div>
-
-                    <h4>Label</h4>
-                    <span class="text-muted">Total Credit Payment:Rs.<?php echo $totalSharesPayment[0]->TotalSharesPay; ?></span>
-                </div>
-                <div class="col-xs-4 col-sm-2 placeholder">
-                    <div style="margin-left: 25%;border-radius: 50%;background-color: #d9534f;width: 100px;height: 100px;">
-                        <h5 style="padding-top: 50%;">
-                            <?php echo 'Rs.'.$totalReservation[0]->TotalReserveAmount; ?>
-                        </h5>
-                    </div>
-
-                    <h4>Label</h4>
-                    <span class="text-muted">Total Credit Payment:Rs.<?php echo $totalReservation[0]->TotalReserveAmount; ?></span>
-                </div>
-                <div class="col-xs-4 col-sm-2 placeholder">
-                    <div style="margin-left: 25%;border-radius: 50%;background-color: #46b8da;width: 100px;height: 100px;">
-                        <h5 style="padding-top: 50%;">
-                            <?php echo 'Rs.'.$totalCreditPayment[0]->TotalCreditPay; ?>
-                        </h5>
-                    </div>
-
-                    <h4>Label</h4>
-                    <span class="text-muted">Total Credit Payment:Rs.<?php echo $totalReservation[0]->TotalReserveAmount; ?></span>
-                </div>
-                <div class="col-xs-4 col-sm-2 placeholder">
-                    <div style="margin-left: 25%;border-radius: 50%;background-color: #b2dba1;width: 100px;height: 100px;">
-                        <h5 style="padding-top: 50%;">
-                            <?php echo 'Rs.'.$totalCreditPayment[0]->TotalCreditPay; ?>
-                        </h5>
-                    </div>
-
-                    <h4>Label</h4>
-                    <span class="text-muted">Total Credit Payment:Rs.<?php echo $totalReservation[0]->TotalReserveAmount; ?></span>
-                </div>
-                <div class="col-xs-4 col-sm-2 placeholder">
-                    <div style="margin-left: 25%;border-radius: 50%;background-color: #8a6d3b;width: 100px;height: 100px;">
-                        <h5 style="padding-top: 50%;">
-                            <?php echo 'Rs.'.$totalCreditPayment[0]->TotalCreditPay; ?>
-                        </h5>
-                    </div>
-
-                    <h4>Label</h4>
-                    <span class="text-muted">Total Credit Payment:Rs.<?php echo $totalReservation[0]->TotalReserveAmount; ?></span>
-                </div>
-
-            </div>
+            <h1 class="page-header">RegisterMe Dashboard</h1>
+            <img src="<?php echo base_url(); ?>img/Desktop.jpg"/>
 
             <h2 class="sub-header">Section title</h2>
+
             <div class="row">
                 <div class="col-md-6">
                     <div class="panel with-nav-tabs panel-default">
@@ -199,7 +93,6 @@
                     </div>
                 </div>
             </div>
-
 
 
             <div class="table-responsive">

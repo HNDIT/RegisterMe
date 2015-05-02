@@ -1,73 +1,39 @@
-<?php
-
-/**
- * Created by PhpStorm.
- * User: THARANGA-PC
- * Date: 3/16/2015
- * Time: 6:13 PM
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+/* Author: Jorge Torres
+ * Description: Login controller class
  */
-class login extends CI_Controller
-{
-    function __construct()
-    {
+class Login extends CI_Controller{
+
+    function __construct(){
         parent::__construct();
-
-        $this->load->model('Generic_model', '', TRUE);
-
-
+        //$this->load->library('DBug');
     }
 
-    function index()
-    {
-        if($this->session->userdata('logged_in')){
-            redirect('home','refresh');
+    public function index($msg = NULL){
+        // Load our view to be displayed
+        // to the user
+
+        $data['msg'] = $msg;
+        $this->load->view('login/login_view', $data);
+    }
+
+    public function process(){
+
+
+        // Load the model
+        $this->load->model('login_model');
+        // Validate the user can login
+        $result = $this->login_model->validate();
+        // Now we verify the result
+        if(! $result){
+            // If user did not validate, then show them login page again
+            $msg = '<font color=red>Invalid username and/or password.</font><br />';
+            $this->index($msg);
         }else{
-            $this->load->view('login/login_view');
+            // If user did validate,
+            // Send them to members area
+            redirect('home');
         }
-
     }
-
-    function validate_login()
-    {
-
-        $username=$this->input->post('username');
-        $password=$this->input->post('password');
-
-        $is_authenticate = $this->Generic_model->getData('membership', '', array('user_name'=>$username,'pass_word'=>md5($password)), 0, 0);
-
-        if(count($is_authenticate)>0)
-        {
-           // var_dump($is_authenticate);die;
-            $sess_array = array();
-            foreach($is_authenticate as $row)
-            {
-                $sess_array = array(
-                    'id' => $row->id,
-                    'username' => $row->user_name,
-                    'email' => $row->email_addres
-                );
-
-                $this->session->set_userdata('logged_in', $sess_array);
-            }
-            $data = array();
-            if ($is_authenticate) {
-                $data['status'] = true;
-            } else {
-                $data['status'] = false;
-                $data['error'] = 'error';
-            }
-        }
-        else
-        {
-            $data['status'] = false;
-            $data['error'] = 'Data Not Matching';
-        }
-
-        echo json_encode($data);
-    }
-
-    function check_database($password)
-    {
-
-    }
-} 
+}
+?>
